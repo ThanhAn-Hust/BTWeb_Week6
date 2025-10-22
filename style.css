@@ -1,0 +1,321 @@
+/* Thêm style cho Cửa hàng Phim CHauPhim */
+
+body {
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; /* Khoảng cách dòng */
+    margin: 0; /* Xóa khoảng cách mặc định của body */
+    padding: 0;
+    background-color: #f4f4f4; /* Màu nền xám nhạt cho trang */
+    color: #333; /* Màu chữ chính */
+}
+
+header {
+    background-color: #2c3e50; 
+    color: #ffffff; 
+    padding: 15px 30px; /* (top -bottom - left - right) */
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Dùng Flexbox cho menu ngang */
+nav ul {
+    list-style: none; /* Xóa dấu chấm đầu dòng */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Kích hoạt Flexbox */
+    flex-direction: row; /* Xếp các mục (li) theo hàng ngang  */
+}
+
+/* Khoảng cách các mục menu */
+nav ul li {
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Bỏ gạch chân link */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #1abc9c; /* Đổi màu khi hover*/
+}
+
+main {
+    max-width: 1200px; 
+    margin: 20px auto; /* Tự động căn giữa (trên/dưới 20px, trái/phải auto) */
+    padding: 0 20px; /* Thêm khoảng đệm 2 bên */
+}
+
+/* Style chung cho các khối <section> */
+section {
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 10px;
+}
+
+/* Danh sách sản phẩm */
+#danh-sach-phim {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các sản phẩm rớt hàng khi không đủ chỗ */
+    gap: 20px; /* Khoảng cách 20px giữa các sản phẩm (thay cho margin) */
+    justify-content: center; /* Căn giữa nếu hàng cuối không đủ sản phẩm */
+}
+
+.phim {
+    /* * flex: 1 1 300px; 
+     * (flex-grow: 1) -> Co giãn
+     * (flex-shrink: 1) -> Co lại nếu cần
+     * (flex-basis: 300px) -> CR min = 300px
+     */
+    flex: 1 1 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 15px;
+    text-align: center;
+}
+
+.phim:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* style bên trong thẻ phim */
+.phim img {
+    max-width: 100%; /* Chiều rộng max = 100% thẻ .phim  -> ko tràn*/
+    height: auto; 
+    border-radius: 4px;
+}
+
+.phim h3 {
+    color: #2c3e50;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.phim p {
+    font-size: 14px;
+    color: #555;
+}
+
+.phim p strong {
+    color: #e74c3c; 
+    font-size: 16px;
+    display: block; /* Giá ở dòng riêng */
+    margin-top: 10px;
+}
+
+
+/* Tke form */
+
+/* Căn center form và limit chiều rộng */
+#lien-he form {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#lien-he div {
+    margin-bottom: 15px; /* Tạo distance giữa các field */
+}
+
+#lien-he label {
+    display: block; /* Đặt label ở ngay trên ô nhập */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style cho ô nhập liệu */
+#lien-he input[type="text"],
+#lien-he input[type="email"],
+#lien-he textarea {
+    width: 100%; /* Chiếm 100% chiều rộng của form */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* Giúp padding không làm ảnh hưởng đến width 100% */
+    box-sizing: border-box; 
+}
+
+/* Style cho nút Gửi */
+#lien-he button {
+    background-color: #1abc9c; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Biến thành hình bàn tay khi chọn nút Gửi */
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#lien-he button:hover {
+    background-color: #16a085; /* Màu đậm hơn khi hover */
+}
+
+/* Dùng !important để đảm bảo nó luôn đè các style khác */
+.hidden {
+    display: none !important; 
+}
+
+/* Style cho khu vực điều khiển */
+#admin-controls {
+    display: flex;
+    flex-wrap: wrap; /* xuống dòng trên mobile */
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#admin-controls .search-container {
+    flex: 1; /* Cho phép co giãn */
+    min-width: 250px; 
+    display: flex;
+}
+
+#searchInput {
+    flex: 1; /* Ô input chiếm phần lớn không gian */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-right: none;
+}
+
+#searchBtn {
+    padding: 10px 15px;
+    border: 1px solid #1abc9c;
+    background: #1abc9c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchBtn:hover {
+    background: #16a085;
+}
+
+#toggleFormBtn {
+    padding: 10px 15px;
+    background: #3498db; /* Màu xanh dương */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#toggleFormBtn:hover {
+    background: #2980b9;
+}
+
+#add-product-section {
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#addProductForm {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#addProductForm div {
+    margin-bottom: 15px;
+}
+
+#addProductForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#addProductForm input[type="text"],
+#addProductForm input[type="number"],
+#addProductForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#addProductForm button {
+    background-color: #2ecc71; /* Màu xanh lá */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#addProductForm button:hover {
+    background-color: #27ae60;
+}
+
+/* Styling Footer */
+footer {
+    background-color: #34495e; /* tương tự header */
+    color: #bdc3c7; /* Màu chữ xám nhạt */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+    /* Chuyển menu ngang thành menu dọc */
+    nav ul {
+        flex-direction: column; /* Xếp li thành cột dọc */
+        align-items: center; /* căn giữa menu */
+    }
+
+    nav ul li {
+        margin: 8px 0; /*khoang cách các mục menu dọc */
+        margin-right: 0;
+    }
+
+    header {
+        text-align: center; /* Căn giữa H1 trên mobile */
+    }
+
+    /* Chuyển danh sách sản phẩm thành 1 cột */
+    #danh-sach-phim {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 0 10px; /*giam padding cho mobile*/
+        margin-top: 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
