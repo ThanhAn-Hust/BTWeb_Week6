@@ -75,6 +75,16 @@ section h2 {
     justify-content: center; /* Căn giữa nếu hàng cuối không đủ sản phẩm */
 }
 
+#danh-sach-phim h2 {
+    flex-basis: 100%; /* Buộc tiêu đề chiếm 100% chiều rộng của flex container */
+    text-align: center; /* Căn giữa tiêu đề */
+    margin-bottom: 20px; /* Thêm khoảng cách dưới tiêu đề */
+    color: #2c3e50; /* Màu chữ */
+    font-size: 28px; /* Cỡ chữ lớn hơn */
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f4f4f4;
+}
+
 .phim {
     /* * flex: 1 1 300px; 
      * (flex-grow: 1) -> Co giãn
@@ -274,10 +284,38 @@ section h2 {
     background-color: #27ae60;
 }
 
-/* Styling Footer */
+/* thong bao loi */ 
+.error-text {
+    color: #e74c3c; /* Màu đỏ cho lỗi */
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 1.2em; 
+}
+
+
+#addProductForm .cancel-btn {
+    background-color: #95a5a6; /* Màu xám */
+    margin-left: 10px;
+}
+
+#addProductForm .cancel-btn:hover {
+    background-color: #7f8c8d; /* Màu xám đậm hơn */
+}
+
+.product-desc {
+    font-size: 14px;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    min-height: 2.8em; 
+}
+
 footer {
     background-color: #34495e; /* tương tự header */
-    color: #bdc3c7; /* Màu chữ xám nhạt */
+    color: #bdc3c7; /* Màu chữ xám */
     text-align: center;
     padding: 20px 0;
     margin-top: 20px;
@@ -302,7 +340,7 @@ footer p {
     }
 
     header {
-        text-align: center; /* Căn giữa H1 trên mobile */
+        text-align: center; /* Căn giữa h1 trên mobile */
     }
 
     /* Chuyển danh sách sản phẩm thành 1 cột */

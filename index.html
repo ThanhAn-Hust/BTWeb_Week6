@@ -29,27 +29,68 @@
             <p>Nơi tốt nhất để tìm kiếm, thuê hoặc mua các bộ phim yêu thích của bạn.</p>
         </section>
 
-        <section id="danh-sach-phim">
-            <h2>Phim Nổi Bật Tuần Này</h2>
+        <section id="admin-controls">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm phim theo tên...">
+                <button id="searchBtn">Tìm</button>
+            </div>
+            <div class="add-container">
+                <button id="toggleFormBtn">Thêm sản phẩm</button>
+            </div>
+        </section>
 
+        <section id="add-product-section" class="hidden">
+            <h2>Thêm phim mới</h2>
+            <form id="addProductForm">
+                <div>
+                    <label for="newName">Tên phim:</label>
+                    <input type="text" id="newName" name="phim_ten" required>
+                </div>
+                <div>
+                    <label for="newDesc">Mô tả:</label>
+                    <textarea id="newDesc" name="phim_mo_ta" rows="3"></textarea>
+                </div>
+                <div>
+                    <label for="newPrice">Giá (VNĐ):</label>
+                    <input type="number" id="newPrice" name="phim_gia" required>
+                </div>
+                <div>
+                    <label for="newImageURL">Link ảnh (URL):</label>
+                    <input type="text" id="newImageURL" name="phim_anh" placeholder="https://via.placeholder.com/150x220">
+                </div>
+                
+                <p id="errorMsg" class="error-text"></p>
+
+                <div>
+                    <button type="submit">Lưu sản phẩm</button>
+                    <button type="button" id="cancelBtn" class="cancel-btn">Hủy</button>
+                </div>
+            </form>
+        </section>
+        
+        <section>
+            <h2>Phim Nổi Bật Tuần Này</h2>
+        </section>
+
+        <section id="danh-sach-phim">
             <article class="phim">
-                <h3>Inception (2010)</h3>
-                <img src="https://via.placeholder.com/150x220?text=Inception+Poster" alt="Áp phích phim Inception">
-                <p>Mơ mơ ảo ảo khó lói</p>
+                <img src="https://th.bing.com/th/id/R.6fc5a3240f09d882606e55da4a58b2dd?rik=OfT5NsH%2bmIJcBg&pid=ImgRaw&r=0" alt="Áp phích phim Inception">
+                <h3 class="product-name">Inception (2010)</h3>
+                <p class="product-desc">Một tên trộm chuyên đánh cắp thông tin bằng cách xâm nhập vào tiềm thức...</p>
                 <p><strong>Giá:</strong> 199.000 VNĐ (Mua)</p>
             </article>
 
             <article class="phim">
-                <h3>The Matrix (1999)</h3>
-                <img src="https://via.placeholder.com/150x220?text=The+Matrix+Poster" alt="Áp phích phim The Matrix">
-                <p>Một hacker phát hiện ra thế giới anh đang sống là một mô phỏng thực tế ảo phức tạp.</p>
+                <img src="https://tse1.mm.bing.net/th/id/OIP.pv0qJxNou6CvQEHWRIBMSwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Áp phích phim The Matrix">
+                <h3 class="product-name">The Matrix (1999)</h3>
+                <p class="product-desc">Một hacker máy tính phát hiện ra thế giới anh đang sống là một mô phỏng...</p>
                 <p><strong>Giá:</strong> 49.000 VNĐ (Thuê) / 149.000 VNĐ (Mua)</p>
             </article>
 
             <article class="phim">
-                <h3>Parasite (2019)</h3>
-                <img src="https://via.placeholder.com/150x220?text=Parasite+Poster" alt="Áp phích phim Parasite">
-                <p>Phim Hàn Peak</p>
+                <img src="https://tse3.mm.bing.net/th/id/OIP.-YwhLrpVeI_Clj8zhdjUUQHaKp?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Áp phích phim Parasite">
+                <h3 class="product-name">Parasite (2019)</h3>
+                <p class="product-desc">Câu chuyện về sự chênh lệch giàu nghèo gay gắt qua mối quan hệ...</p>
                 <p><strong>Giá:</strong> 229.000 VNĐ (Mua)</p>
             </article>
 
